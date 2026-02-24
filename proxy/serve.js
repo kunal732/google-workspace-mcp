@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 const PROJECT_ID = "datadog-community";
 const CLIENT_ID = "1036979431900-qs3pg7m68h198i519gshdnucbd6ltrc7.apps.googleusercontent.com";
 const CLOUD_RUN_URL = "https://google-workspace-mcp-1036979431900.us-central1.run.app";
-const ALLOWED_DOMAIN = "datadog.com";
+const ALLOWED_DOMAIN = "datadoghq.com";
 
 const SCOPES = [
   "openid",
@@ -99,7 +99,7 @@ const server = http.createServer(async (req, res) => {
       authUrl.searchParams.set("access_type", "offline");
       authUrl.searchParams.set("prompt", "consent");
       authUrl.searchParams.set("state", sessionId);
-      authUrl.searchParams.set("hd", ALLOWED_DOMAIN); // hints Google to show only @datadog.com accounts
+      authUrl.searchParams.set("hd", ALLOWED_DOMAIN); // hints Google to show only @datadoghq.com accounts
 
       res.writeHead(302, { Location: authUrl.toString() });
       res.end();
