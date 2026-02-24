@@ -1,3 +1,4 @@
 node_modules/
-proxy/
+proxy/server.js
+proxy/node_modules/
 *.tgz
